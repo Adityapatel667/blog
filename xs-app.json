@@ -1,0 +1,29 @@
+{
+    "welcomeFile": "/index.html",
+    "authenticationMethod": "route",
+    "logout": {
+        "logoutEndpoint": "/do/logout"
+    },
+    "routes": [
+        {
+            "source": "^/rapidApi/(.*)$",
+            "target": "$1",
+            "authenticationType": "none",
+            "destination": "rapidApi",
+            "csrfProtection": false
+        },
+        {
+            "source": "^/norvig/(.*)$",
+            "target": "$1",
+            "authenticationType": "none",
+            "destination": "norvig",
+            "csrfProtection": false
+        },
+        {
+            "source": "^(.*)$",
+            "target": "$1",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa"
+        }
+    ]
+}

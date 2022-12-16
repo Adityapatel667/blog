@@ -1,0 +1,14 @@
+{
+    "graduate": [
+        {"key":1,
+        "value":"B.tech"},
+        {"key":2,
+        "value":"BCA"},
+        {"key":3,
+        "value":"MCA"},
+        {"key":4,
+        "value":"MBA"}
+    ]
+        
+}
+

@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      
+      title="User Detail">
+      <content>
+         <Label text="source" />
+         <Table items="{oStaticModel>/tableData}">
+            <columns>
+                <Column>
+                    <Label text="Name" />
+                </Column>
+                <Column>
+                    <Label text="Age" />
+                </Column>
+                <Column>
+                    <Label text="Degree" />
+                </Column>
+                <Column>
+                    <Label text="DOB" />
+                </Column>
+            </columns>
+                <ColumnListItem>
+                    <cells>
+                        <Input value="{oStaticModel>name}" />
+                        <Input value="{oStaticModel>age}" />
+                        <Input value="{oStaticModel>Degree}" />
+                        <Input value="{oStaticModel>DOB}" />
+                        <Input value="{oStaticModel>Email}" />
+                        </cells>
+                    </ColumnListItem>
+                </Table>
+
+      </content>
+      <buttons>
+         <Button
+            text="Close"
+            press="closeTableFragment"/>
+      </buttons>
+      
+      
+       
+   </Dialog>
+   
+</core:FragmentDefinition>

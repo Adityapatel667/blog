@@ -1,0 +1,61 @@
+.vertcialLayout {
+    padding: 125px;
+}
+
+/* .btnSubmit .sapMBtnInner {
+    background-color: #43A849;
+    color: #ffff;
+    border: none;
+} */
+
+/* .btnSubmit  */
+
+/* .tableInput .sapMInputBaseContentWrapper {
+    border: none;
+} */
+
+.dialogLabel {
+    font-weight: bold;
+    font-size: large;
+}
+
+.cancelIcon .sapMBtnInner{
+    border: none;
+}
+
+.formFontColor{
+    color:#000 !important;
+}
+
+.formateBackground.sapUiSimpleForm {
+    width: 100%;
+    box-sizing: border-box;
+    background: azure;
+}
+.submitButton.sapMBtn .sapMBtnInner {
+   background: rgb(246, 47, 206);
+   width: 33%;
+   color: rgb(250, 249, 249)
+}
+.submitButton2.sapMBtn .sapMBtnInner {
+   background: rgb(9, 244, 99);
+   width: 33%;
+   color: rgb(8, 8, 246)
+}
+
+.aditya.sapMInputBaseInner[placeholder] {
+   
+    background-color: 6d86d7 !important;
+}
+
+
+.ageFormatter{
+    background: rgb(167, 242, 45);
+    color: aliceblue;
+}
+.ageFormatter2{
+    background: rgb(211, 41, 245);
+    color: rgb(252, 252, 252);
+}
+
+

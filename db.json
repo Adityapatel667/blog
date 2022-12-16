@@ -1,0 +1,17 @@
+{"users":[
+    {
+        "id" :1,
+        "name" :"aditya",
+        "age" :"23"
+    },
+    {
+        "id" :2,
+        "name" :"aditya",
+        "age" :"23"
+    },
+    {
+        "id" :3,
+        "name" :"aditya",
+        "age" :"23"
+    }
+]}

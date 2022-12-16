@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">>
+   <Dialog  class="sapUiLargeMargin" contentWidth="30rem">
+      <customHeader>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Label text=" {i18n>editDialogTitle}" class='dialogLabel sapUiLargeMargin' design="Bold"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://decline" class='cancelIcon' press="onCancelEdit" type="Reject"/>
+			</OverflowToolbar>
+		</customHeader>
+        <content>
+			<l:Grid defaultSpan="L8 M8 S8" class="sapUiMediumMargin">
+				<l:content>
+					<Label text='{i18n>name}' class="sapUiTinyMarginTop" required="true">
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input id='name' type='Text' value='{oStaticModel>/itemData/name}' class='name' valueState='{oStaticModel>/nameState}' placeholder='Name' change="onChangeName"></Input>                    
+                    <Label text='{i18n>age}' class="sapUiTinyMarginTop" required="true">
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4" ></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input id='age' type='Number' value='{oStaticModel>/itemData/age}' valueState='{oStaticModel>/ageState}' required="true" placeholder='Age' change='onChangeAge'></Input>
+                    <Label text='{i18n>gender}' class="sapUiTinyMarginTop" required='true'>
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4"></l:GridData>
+                        </layoutData>
+                    </Label >
+                    <RadioButtonGroup buttons='{oStaticModel>/gender}' selectedIndex="{oStaticModel>/itemData/selectedGender/key}" valueState='{oStaticModel>/genderState}' columns='2' select='onChangeGender'>
+                        <RadioButton text='{oStaticModel>value}' ></RadioButton>                                
+                    </RadioButtonGroup>                        
+                    <Label text='{i18n>state}' class="sapUiTinyMarginTop" required='true'>
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <ComboBox id='state' items='{oStaticModel>/state}' selectedKey="{oStaticModel>/itemData/selectedState/key}" valueState='{oStaticModel>/stateState}' placeholder="Select state" change='onChangeState' width="20rem">
+                        <core:Item key='{oStaticModel>key}' text='{oStaticModel>value}' />                                
+                    </ComboBox>                        
+                    <Label text='{i18n>phone}' class="sapUiTinyMarginTop" required='true'>
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <Input id='phone' type='Number' value='{oStaticModel>/itemData/phone}' valueState='{oStaticModel>/phoneState}' required="true" placeholder='Phone number' maxLength="10" change="onChangePhone"></Input>                        
+                    <Label text='{i18n>edu}' class="sapUiTinyMarginTop" required='true'>
+                        <layoutData>
+                            <l:GridData span="XL4 L4 M4 S4"></l:GridData>
+                        </layoutData>
+                    </Label>
+                    <HBox id='edu' items='{oStaticModel>/eduCopy}'>
+                        <CheckBox text='{oStaticModel>value}' selected="{oStaticModel>selected}" valueState='{oStaticModel>/eduState}' select='onChangeEdu'/>    
+                    </HBox>                                                
+                </l:content>                
+			</l:Grid>
+		</content>
+        <buttons>
+            <Button id='saveBtn' class='sapUiTinyMargin' text='{i18n>save}' type="Accept" press="onSaveDialog"/>
+            <Button id='cancelBtn' class='sapUiTinyMargin' text='{i18n>cancel}' type='Reject' press="onCancel" /> 
+        </buttons>
+   </Dialog>
+</core:FragmentDefinition>
+
+

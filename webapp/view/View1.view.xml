@@ -1,0 +1,153 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" 
+    xmlns:core='sap.ui.core'
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    
+>
+    <App>
+        <Page>
+            <Button text="fragment" press="fragmentFunc" />
+            <form:SimpleForm class="formateBackground" >
+                <form:content class="formBackground formFontColor" >
+                    <Label required="true"   text="{i18n>name}" class="tableStatus" />
+                    <Input 
+                        value="{oModel>/name}" 
+                        valueState="{oModel>/nameState}" 
+                        placeholder="Enter Your FullName" 
+                        type="Text" 
+                        width="50%"
+                        required='true'
+                        valueStateText="Name must not be empty. Maximum 10 characters.special characters and numbers are not allowed"
+                        
+                        change="nameFunc">
+                        </Input>
+                    <Label required="true"  text="{i18n>age}" />
+                    <Input 
+                         change="colchange"
+                         value="{oModel>/age}" 
+                         valueState="{oModel>/ageState}"
+                         id= "Umar"
+                             width="10%"
+                             placeholder="Enter Your Age"
+                             valueStateText="Age must be a number between 1-200"
+                             
+                              type="Number">
+                            </Input>
+                    <Label text="{i18n>degree}" required="true" />
+                    <Select items="{oStaticModel>/graduate}" 
+                            width="50%"
+                            forceSelection="false" 
+                            valueState="{oModel>/degreeState}"
+                            valueStateText="Must select an opition"
+                            selectedKey="{oModel>/degree}"
+                           >
+                        <core:Item 
+                            key="{oStaticModel>value}" text="{oStaticModel>value}" />
+                    </Select >
+                    <Label text="{i18n>graduate}" labelFor="groupE" required="true" />
+                    <RadioButtonGroup 
+                           
+                            valueState="{oModel>/graduateState}"
+                            selectedIndex="{Model>/graduate}"
+                            
+                           
+                            >
+                        <RadioButton text="Yes" selected="{oModel>/selected}"  />
+                        <RadioButton text="No" selected="false"  />
+                    </RadioButtonGroup>
+                    <Label required="true"  text="{i18n>dob}" />
+                    <DatePicker
+                                width="30%"
+                                maxDate="{oModel>/maxDate}"
+                                valueFormat="dd-MM-yyyy"
+                                displayFormat="dd-MM-yyyy"
+                                placeholder="DD-MM-YYY"
+                                class="sapUiSmallMarginBottom"
+                                valueState="{oModel>/DOBState}"
+                                value="{oModel>/DOB}"
+                                valueStateText="choose your DOB"/>
+                    <Label required="true" class="formBackground"  text="{i18n>email}" />
+                    <Input
+                              width="50%"
+                             change="emailFunc"
+                             value="{oModel>/email}" 
+                             valueState="{oModel>/emailState}"
+                             placeholder="Enter Your E-mail"
+                             valueStateText="Enter valid E-mail"
+                              type="Email" />
+                    <Button text="{oModel>/submitText}" press="submitFunc" id="submit" class="submitButton"/>
+                </form:content>
+            </form:SimpleForm>
+            <MessageStrip text="User Details" class="sapUiTinyMargin"/>
+            <OverflowToolbar class="sapUiMediumMarginTop">
+                <Button icon="sap-icon://delete" press="selectDelete" type="Reject"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://add" type="Accept"/>
+            </OverflowToolbar>
+            <Table id= "formTable" 	class="formBackground"	mode="MultiSelect" items="{oStaticModel>/tableData}">
+                <columns>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>name}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>age}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>degree}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>dob}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>email}" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Label text="{i18n>action}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{path:'oStaticModel>name', formatter:'.formatterHeader'}" 	class="formBackground"/>
+                            <Text text="{path:'oStaticModel>age', formatter: '.ageformatter'}" 	 />
+                            <Text text="{oStaticModel>degree}" 	 />
+                            <Text text="{oStaticModel>DOB}" 	class="formBackground"/>
+                            <Text text="{oStaticModel>email} " 	/>
+                            <FlexBox
+                             height="54px"
+			            	 alignItems="Center"
+				             justifyContent="Center">
+                                <Button icon="sap-icon://delete" press="deleteFunc" type="Reject"  class="sapUiSmallMarginEnd" />
+                                <Button icon="sap-icon://edit" press="editFunc"  class="sapUiSmallMarginEnd"  />
+                            </FlexBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Button text="userData" press="userdata" />
+            <Table items="{oStaticModel>/userDetail}">
+                <columns>
+                    <Column>
+                        <Label text="Name" />
+                    </Column>
+                    <Column>
+                        <Label text="ID" />
+                    </Column>
+                    <Column>
+                        <Label text="Age" />
+                    </Column>
+                </columns>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{oStaticModel>name}" />
+                            <Text text="{oStaticModel>id}" />
+                            <Text text="{oStaticModel>age}" />
+                            </cells>
+                        </ColumnListItem>
+                    </Table>
+                </Page>
+            </App>
+        </mvc:View>
